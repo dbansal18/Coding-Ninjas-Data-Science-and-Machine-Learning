@@ -8,7 +8,8 @@
 
 from sys import stdin
 
-def sortZeroesAndOne(arr, n) :
+
+def sortZeroesAndOne(arr: list, n: int) -> list:
     zeros = 0
     ones = 0
     for ele in arr:
@@ -18,13 +19,13 @@ def sortZeroesAndOne(arr, n) :
             zeros += 1
     for i in range(zeros):
         arr[i] = 0
-    for i in range(zeros, ones+zeros):
+    for i in range(zeros, ones + zeros):
         arr[i] = 1
     return arr
 
 
 # # Alternative better solution
-# def sortZeroesAndOne(arr, n) :
+# def sortZeroesAndOne(arr:list, n:int)->list:
 #     nextZero = 0
 #     for i in range(n):
 #         if arr[i] == 0:
@@ -34,29 +35,28 @@ def sortZeroesAndOne(arr, n) :
 #             nextZero += 1
 
 
-#Taking Input Using Fast I/O
-def takeInput() :
+# Taking Input Using Fast I/O
+def takeInput():
     n = int(stdin.readline().strip())
 
-    if n == 0 :
+    if n == 0:
         return list(), 0
 
-    
     arr = list(map(int, stdin.readline().strip().split(" ")))
     return arr, n
 
 
-def printList(arr, n) :
-    for i in range(n) :
-        print(arr[i], end = ' ')
+def printList(arr, n):
+    for i in range(n):
+        print(arr[i], end=" ")
     print()
 
 
-#main
+# main
 t = int(stdin.readline().strip())
 
-while t > 0 :
-    
+while t > 0:
+
     arr, n = takeInput()
     sortZeroesAndOne(arr, n)
     printList(arr, n)
